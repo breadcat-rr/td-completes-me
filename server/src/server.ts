@@ -157,11 +157,10 @@ connection.onCompletion(async (_position : TextDocumentPositionParams) : Promise
 	}
 		results = await axios.post('http://localhost:1338', JSON.stringify({current_document , lines,line_idx, char})+ "\n").then(
 		(res) => {
-			let splits = res.data.split("\n\r\n\r")
-			if(splits.length > 1) {
+			console.log(`Recieved TD Server suggestions: ${res.data.length}`)
 
-				let res_data = JSON.parse(splits[1]);
-				console.log(res_data)
+			if(res.data.length > 0) {
+				let res_data = res.data;
 				let data_index = 0;
 				let completion_data = res_data.map((result:ResData) => {
 					return {label : result.label, 
