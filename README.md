@@ -6,6 +6,7 @@
 
 # What is this?
 This is a combo TOX/VSCode extension that leverages the Language Server protocol to send a list of context sensitive auto-completion items to Microsoft's Visual Studio Code. 
+This fork is a minimally modified version of the original, changes only made to make expected features work again :)
 
 
 
